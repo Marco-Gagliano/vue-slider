@@ -34,9 +34,28 @@ const app = new Vue({
             image: 'img/05.jpg',
             title: 'Paradise',
             text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis.',
+        }
+        ],
+        contatoreSlide: 0,
+    },
+
+    methods: {
+        fotoPrecedente() {
+          this.contatoreSlide--;
+          if(this.contatoreSlide < 0) {
+              this.contatoreSlide = this.slides.length - 1
+          };                    
         },
-    ]
-},
+        
+        fotoSuccessiva() {
+            this.contatoreSlide++
+            if(this.contatoreSlide > this.slides.length - 1){
+                this.contatoreSlide = 0                    
+            }
+
+        },
+
+    },  
 
 
 });
